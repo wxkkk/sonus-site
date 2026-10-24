@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sonus 声浪 — 隐私政策</title>
+<style>
+  :root { --ink:#0B0D0C; --ivory:#F2F1EC; --brass:#C6A96B; }
+  body { margin:0; padding:48px 20px 96px; background:var(--ink); color:var(--ivory);
+         font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB",
+              "Microsoft YaHei",sans-serif; }
+  main { max-width:44rem; margin:0 auto; }
+  h1 { font-size:1.9rem; letter-spacing:-.01em; margin:0 0 .25em; }
+  h2 { font-size:1.05rem; letter-spacing:.08em;
+       color:var(--brass); margin:2.5em 0 .6em; }
+  p, li { color:rgba(242,241,236,.82); }
+  li { margin:.35em 0; }
+  .date { color:rgba(242,241,236,.45); font-size:.9rem; margin:0 0 2em; }
+  a { color:var(--brass); }
+  code { background:rgba(242,241,236,.08); padding:.1em .35em; border-radius:3px; font-size:.9em; }
+  table { width:100%; border-collapse:collapse; margin:1em 0; font-size:.95rem; }
+  th, td { text-align:left; padding:.6em .8em; border-bottom:1px solid rgba(242,241,236,.13);
+           color:rgba(242,241,236,.82); vertical-align:top; }
+  th { color:var(--brass); font-weight:500; white-space:nowrap; }
+  .lead { color:rgba(242,241,236,.95); }
+</style>
+</head>
+<body>
+<main>
+  <h1>隐私政策</h1>
+  <p class="date">Sonus 声浪 · 更新日期：2026 年 10 月 24 日 · 生效日期：2026 年 10 月 24 日</p>
+
+  <p class="lead">Sonus 不收集你的任何个人信息。本应用没有账号体系，没有我们自己的
+  服务器，也不会把你或你的驾驶数据传出你的设备。</p>
+
+  <p>本政策说明 Sonus（以下称"本应用"）如何处理信息。开发者为王鹏飞（个人开发者）。
+  请在使用本应用前阅读本政策。</p>
+
+  <h2>一、我们如何处理你的信息</h2>
+
+  <p>本应用会在运行期间读取下面两类设备信息。它们<strong>只在你的设备内存中使用</strong>，
+  用于驱动声音，<strong>不写入任何存储、不上传、不共享、不用于任何其他目的</strong>。</p>
+
+  <table>
+    <tr><th>信息类型</th><th>用途</th><th>处理方式</th></tr>
+    <tr>
+      <td>运动与健身<br>（加速度计）</td>
+      <td>区分加速与刹车，据此推算虚拟转速和声音</td>
+      <td>仅在声浪运行期间读取，仅在本机内存中使用，不存储、不上传</td>
+    </tr>
+    <tr>
+      <td>位置信息<br>（GPS 车速）</td>
+      <td>校正车速估算。加速度计看不出匀速巡航，需要 GPS 车速来修正</td>
+      <td><strong>仅在"车载"模式且声浪正在运行时</strong>读取，仅在本机使用，不存储、不上传</td>
+    </tr>
+  </table>
+
+  <p>这两项权限<strong>都是可选的</strong>。拒绝授权后，本应用在"手动模拟"模式下仍然
+  完整可用。你可以随时在 iOS 的「设置 → 隐私与安全性」中<strong>撤回</strong>已授予的
+  权限，这不会影响应用的其他功能。</p>
+
+  <h2>二、留在你设备上的信息</h2>
+
+  <p>下面这些信息保存在本应用在你设备上的私有存储区（iOS <code>SharedPreferences</code>）。
+  它们<strong>不会离开你的设备</strong>，我们也无法访问：</p>
+
+  <ul>
+    <li><strong>行程记录</strong>——每段行程的时长、峰值 G 值、最高车速、0–100 加速时间，
+        以及一条低采样率的行驶轨迹</li>
+    <li><strong>校准数据</strong>——手机的安装姿态与车头方向</li>
+    <li><strong>偏好设置</strong>——所选引擎、音量、延迟补偿等</li>
+    <li><strong>购买状态</strong>——一个标记"是否已购买完整解锁"的布尔值</li>
+  </ul>
+
+  <p><strong>删除方式：</strong>删除本应用即会一并删除上述全部数据，不留任何副本。
+  由于本应用没有账号体系，也不向任何服务器上传数据，因此不存在账号注销的概念，
+  也无需单独申请删除。</p>
+
+  <h2>三、第三方 SDK 与合作方</h2>
+
+  <p>本应用使用下列第三方开源组件。它们<strong>全部在本机运行，均不收集、不上传任何
+  个人信息，也不含统计、广告或跟踪能力</strong>：</p>
+
+  <table>
+    <tr><th>组件</th><th>用途</th><th>是否收集个人信息</th></tr>
+    <tr><td>flutter_soloud</td><td>音频合成与播放</td><td>否</td></tr>
+    <tr><td>audio_session</td><td>配置系统音频会话</td><td>否</td></tr>
+    <tr><td>sensors_plus</td><td>读取加速度计</td><td>否，数据仅在本机内存中</td></tr>
+    <tr><td>geolocator</td><td>读取 GPS 车速</td><td>否，数据仅在本机内存中</td></tr>
+    <tr><td>shared_preferences</td><td>在本机保存设置与行程</td><td>否，数据仅在本机</td></tr>
+    <tr><td>in_app_purchase</td><td>调用 Apple 内购</td><td>否，交易由 Apple 处理</td></tr>
+    <tr><td>flutter_riverpod、go_router、intl</td><td>界面框架与本地化</td><td>否</td></tr>
+  </table>
+
+  <p>我们<strong>没有</strong>接入任何统计分析 SDK、广告 SDK 或崩溃上报 SDK。</p>
+
+  <h2>四、购买</h2>
+
+  <p>应用内购买由 Apple 全程处理。Sonus 不会看到、也不会接触你的支付信息，仅在本机
+  记录"已完成购买"这一个标记。相关信息的处理适用
+  <a href="https://www.apple.com/legal/privacy/zh-cn/">Apple 隐私政策</a>。</p>
+
+  <h2>五、网络连接</h2>
+
+  <p>本应用<strong>没有自己的服务器</strong>，也不会主动发起任何网络请求。设备上唯一
+  与本应用相关的网络流量来自 Apple 的 StoreKit 框架（用于查询商品和完成购买），
+  该流量发生在你的设备与 Apple 服务器之间。</p>
+
+  <h2>六、统计、广告与跟踪</h2>
+
+  <p>没有。本应用不含统计分析、不含广告、不做用户画像，不会跨应用或跨网站跟踪你，
+  也不会调用 iOS 的广告标识符（IDFA）。</p>
+
+  <h2>七、你的权利</h2>
+
+  <p>根据《中华人民共和国个人信息保护法》等法律法规，你对自己的个人信息享有查阅、
+  复制、更正、删除以及撤回同意等权利。就本应用而言：</p>
+
+  <ul>
+    <li><strong>查阅与复制</strong>——行程记录等数据都在应用内直接可见（「行程记录」页面）</li>
+    <li><strong>删除</strong>——删除本应用即删除全部数据</li>
+    <li><strong>撤回同意</strong>——在 iOS「设置 → 隐私与安全性」中关闭定位或运动权限</li>
+    <li><strong>我们不持有你的任何信息</strong>，因此无法也无需代你行使上述权利</li>
+  </ul>
+
+  <h2>八、未成年人</h2>
+
+  <p>本应用年龄分级为 4+，不收集任何人的个人信息，包括未成年人。我们不会专门针对
+  未成年人收集信息。如你是未满十四周岁的未成年人的父母或监护人，有任何疑问可通过
+  下方方式联系我们。</p>
+
+  <h2>九、本政策的更新</h2>
+
+  <p>如果将来某个版本开始收集任何信息，我们会在该版本发布<strong>之前</strong>更新本页面
+  以及 App Store 上的隐私标签，并在应用内重新征求你的同意。本页顶部始终标注最新的
+  更新日期。</p>
+
+  <h2>十、联系我们</h2>
+
+  <p>对本政策有任何疑问、意见或投诉，请联系个人信息保护负责人：
+  <a href="mailto:nicholas_wpf@outlook.com">nicholas_wpf@outlook.com</a></p>
+
+  <p>我们会在收到后十五个工作日内回复。</p>
+
+  <p style="margin-top:3em"><a href="privacy.html">English version</a></p>
+</main>
+</body>
+</html>
